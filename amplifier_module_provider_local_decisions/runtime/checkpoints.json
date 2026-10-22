@@ -1,0 +1,389 @@
+[
+  {
+    "key": "lightning",
+    "repository": "h2oai/h2o-lightning-4b",
+    "revision": "d922608ae0abcd8de27948f004ecbb8f0f2334f9",
+    "gated": false,
+    "files": [
+      ".gitattributes",
+      "LICENSE",
+      "README.md",
+      "adapter/adapter_config.json",
+      "adapter/adapter_model.safetensors",
+      "assets.py",
+      "assets/accuracy_latency_composite_2026-10-10.data.json",
+      "assets/accuracy_latency_composite_2026-10-10.gif",
+      "assets/accuracy_latency_composite_2026-10-10.html",
+      "assets/accuracy_latency_composite_2026-10-10.mp4",
+      "assets/accuracy_latency_composite_2026-10-10.png",
+      "assets/banner.png",
+      "assets/datamix_stages.png",
+      "assets/demos/demos_reel.mp4",
+      "assets/demos/demos_reel_poster.jpg",
+      "assets/jevbench_capability_vs_cost_2026-10-07.png",
+      "assets/jevbench_composite_2026-10-07.png",
+      "assets/jevbench_four_axes_2026-10-07.png",
+      "assets/jevbench_scores_latency_2026-10-10.csv",
+      "assets/jevbench_scores_latency_2026-10-10.pdf",
+      "assets/jevbench_scores_latency_2026-10-10.png",
+      "assets/jevbench_scores_latency_2026-10-10.svg",
+      "assets/qtype_stages.png",
+      "box.py",
+      "card_common.py",
+      "chat_template.jinja",
+      "config.json",
+      "example_receipt.png",
+      "generation_config.json",
+      "h2o_lightning_shim.py",
+      "label_rows.lightning",
+      "merges.txt",
+      "model.safetensors",
+      "pooled_readout.py",
+      "preprocessor_config.json",
+      "pytest.ini",
+      "routing_reproducibility/ATTRIBUTION.md",
+      "routing_reproducibility/README.md",
+      "routing_reproducibility/SHA256SUMS",
+      "routing_reproducibility/predictions.jsonl",
+      "routing_reproducibility/questions/LICENSE-plumb-decisions-Apache-2.0.txt",
+      "routing_reproducibility/questions/eikos.jsonl",
+      "routing_reproducibility/questions/plumb_s2k.jsonl",
+      "routing_reproducibility/routing_thresholds.py",
+      "serve.sh",
+      "serve_config.json",
+      "test_card.py",
+      "test_card_controls.py",
+      "test_security.py",
+      "test_shim.py",
+      "tokenizer.json",
+      "tokenizer_config.json",
+      "video_preprocessor_config.json",
+      "vllm_patches/README.md",
+      "vllm_patches/SHA256SUMS",
+      "vllm_patches/vllm030_gdn_initial_state_no_sync.patch",
+      "vllm_patches/vllm030_scheduler_skip_same_step_mamba.patch",
+      "vocab.json"
+    ],
+    "downloads": [
+      {
+        "rfilename": "LICENSE",
+        "blobId": "f938136e3adacfd92be087f6e113b5d6d97f678f",
+        "size": 11544
+      },
+      {
+        "rfilename": "README.md",
+        "blobId": "b84265fbafa79bfdb7b7675e8b515e48f6987264",
+        "size": 70936
+      },
+      {
+        "rfilename": "assets.py",
+        "blobId": "81997b76bcc1d38f966553be4e249fd3128728d2",
+        "size": 9700
+      },
+      {
+        "rfilename": "box.py",
+        "blobId": "ddc4cc8cf0d40db3ca99a83a875eb214ddef9155",
+        "size": 26900
+      },
+      {
+        "rfilename": "card_common.py",
+        "blobId": "82c688c422c6cef88686b4b295157dd17e04047a",
+        "size": 22301
+      },
+      {
+        "rfilename": "chat_template.jinja",
+        "blobId": "a585dec894e63da457d9440ec6aa7caa16d20860",
+        "size": 7756
+      },
+      {
+        "rfilename": "config.json",
+        "blobId": "8b131a91b46d11f5e04a22e66f9d341ed30ab1bf",
+        "size": 2872
+      },
+      {
+        "rfilename": "generation_config.json",
+        "blobId": "5c82823157c9f9990e90eac595799b69ce524ac8",
+        "size": 116
+      },
+      {
+        "rfilename": "h2o_lightning_shim.py",
+        "blobId": "8111402cf0fc0af9b3dfcf9343574d0777a3726b",
+        "size": 125256
+      },
+      {
+        "rfilename": "label_rows.lightning",
+        "blobId": "1c9c609a9a86391d15514bdb14e7241afd610951",
+        "size": 2620864,
+        "lfs": {
+          "sha256": "3a20394421ede860e6de027875cb264790f5757d02750e2a3b95ca612ff54749",
+          "size": 2620864,
+          "pointerSize": 132
+        }
+      },
+      {
+        "rfilename": "merges.txt",
+        "blobId": "a494e019ca1502219fd0128658b979e5f05ae8e8",
+        "size": 3353259
+      },
+      {
+        "rfilename": "model.safetensors",
+        "blobId": "2ddf36c3e601880a0fa528cd535405733f7f17ee",
+        "size": 9319828352,
+        "lfs": {
+          "sha256": "0779980b4335a9decb00db32bd7101e7e2776f061b971d8e42b63920b68d9645",
+          "size": 9319828352,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "pooled_readout.py",
+        "blobId": "158cc0e2f7a57f9005b8874d1301aef6c7d59d88",
+        "size": 11981
+      },
+      {
+        "rfilename": "preprocessor_config.json",
+        "blobId": "2ea84a437d448ff71b08df68fdd949d5cc4ebb64",
+        "size": 390
+      },
+      {
+        "rfilename": "serve_config.json",
+        "blobId": "5c069439591097c7b727b2232bad6bf8175c56b1",
+        "size": 3830
+      },
+      {
+        "rfilename": "test_card.py",
+        "blobId": "8cf1b8bec932e8b6701c6417f10cbc2ee1688821",
+        "size": 29340
+      },
+      {
+        "rfilename": "test_card_controls.py",
+        "blobId": "946fd48b4eb1e3c41d56d55aadce07994b7ecabe",
+        "size": 3327
+      },
+      {
+        "rfilename": "test_security.py",
+        "blobId": "3583111068b4ab7aa69f3acaeedf9ae7dff2a23e",
+        "size": 10016
+      },
+      {
+        "rfilename": "test_shim.py",
+        "blobId": "a9d203b66a18b1338ff02f73a13e2a2191951799",
+        "size": 84030
+      },
+      {
+        "rfilename": "tokenizer.json",
+        "blobId": "a73a846725794819aa6e1c9e97d8dc9671c2006d",
+        "size": 12807982,
+        "lfs": {
+          "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+          "size": 12807982,
+          "pointerSize": 133
+        }
+      },
+      {
+        "rfilename": "tokenizer_config.json",
+        "blobId": "eda48d3e75a8e59a8479ee4ec8b37f76e711d9c1",
+        "size": 16710
+      },
+      {
+        "rfilename": "video_preprocessor_config.json",
+        "blobId": "3ba673a5ad7d4d13f54155ecd38b2a94a6dac8fe",
+        "size": 385
+      },
+      {
+        "rfilename": "vocab.json",
+        "blobId": "0aa0ce0658d60ac4a5d609f4eadb0e8e43514176",
+        "size": 6722759
+      }
+    ]
+  },
+  {
+    "key": "d3-mini",
+    "repository": "vllm-sr/d3-mini",
+    "revision": "bd0090dd758d32ba59ef5c749910a8e87fc4391f",
+    "gated": false,
+    "files": [
+      ".eval_results/vllm-sr__d3-mini.yaml",
+      ".gitattributes",
+      "LICENSE",
+      "MODEL_MANIFEST.json",
+      "NOTICE",
+      "README.md",
+      "assets/banner.png",
+      "assets/example-receipt.png",
+      "assets/example-video.mp4",
+      "assets/index-areas.png",
+      "assets/index-pareto.png",
+      "assets/serving-throughput.png",
+      "chat_template.jinja",
+      "config.json",
+      "d3_engine.py",
+      "d3_fast.py",
+      "d3_format.py",
+      "d3_kernels.py",
+      "d3_runtime.py",
+      "d3_server.py",
+      "decision_config.json",
+      "merges.txt",
+      "model-00001-of-00002.safetensors",
+      "model-00002-of-00002.safetensors",
+      "model.safetensors.index.json",
+      "modeling_d3.py",
+      "pipeline_d3.py",
+      "preprocessor_config.json",
+      "readout.safetensors",
+      "requirements.txt",
+      "tokenizer.json",
+      "tokenizer_config.json",
+      "video_preprocessor_config.json",
+      "vocab.json"
+    ],
+    "downloads": [
+      {
+        "rfilename": "LICENSE",
+        "blobId": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+        "size": 11357
+      },
+      {
+        "rfilename": "MODEL_MANIFEST.json",
+        "blobId": "cd1fbc721a1ba78b6a3ccb0f95258458f083d5cb",
+        "size": 11687
+      },
+      {
+        "rfilename": "README.md",
+        "blobId": "f8de336dc90528fddbfe2b87ed99c4c50ada28e6",
+        "size": 17368
+      },
+      {
+        "rfilename": "chat_template.jinja",
+        "blobId": "a585dec894e63da457d9440ec6aa7caa16d20860",
+        "size": 7756
+      },
+      {
+        "rfilename": "config.json",
+        "blobId": "ca8495ef6bb09775fc4a9c5ee615d930edc9fd65",
+        "size": 3090
+      },
+      {
+        "rfilename": "d3_engine.py",
+        "blobId": "24a3ebb4152f3dcde5e9403baff2323c7380b214",
+        "size": 4413
+      },
+      {
+        "rfilename": "d3_fast.py",
+        "blobId": "02b5e7811c901ebe1f8d33f44b4a4a67dde4ed2a",
+        "size": 22331
+      },
+      {
+        "rfilename": "d3_format.py",
+        "blobId": "18a97be8b097d3bf9eda82be649666175a9e4f59",
+        "size": 7008
+      },
+      {
+        "rfilename": "d3_kernels.py",
+        "blobId": "31cb79b7d5dee117c8fec5a820db5a2cc7c8f229",
+        "size": 16129
+      },
+      {
+        "rfilename": "d3_runtime.py",
+        "blobId": "18cfc31416a6df520fba4d4881ef1b878f7ab472",
+        "size": 95505
+      },
+      {
+        "rfilename": "d3_server.py",
+        "blobId": "36657b7fb605dfacfd88bf5a027574a0ab2f6b35",
+        "size": 17705
+      },
+      {
+        "rfilename": "decision_config.json",
+        "blobId": "c3d9b6b56a91ccf48bf3178b7479f0cf4accb5d2",
+        "size": 5502
+      },
+      {
+        "rfilename": "merges.txt",
+        "blobId": "a494e019ca1502219fd0128658b979e5f05ae8e8",
+        "size": 3353259
+      },
+      {
+        "rfilename": "model-00001-of-00002.safetensors",
+        "blobId": "77eb162e38056f77d35c15a60ef5b9e1746d5be0",
+        "size": 4973332144,
+        "lfs": {
+          "sha256": "60621cb8c3f90e634b98f0ffaf609159ee2c450630386f09dd5f7fd7938d7598",
+          "size": 4973332144,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "model-00002-of-00002.safetensors",
+        "blobId": "ca34b553bf6546eb5916d46b8f29c12d24423661",
+        "size": 4105283936,
+        "lfs": {
+          "sha256": "6189569fbe9245030d7ffb0b60a52268b7386e7a85a57aee1274a5178c1cc53d",
+          "size": 4105283936,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "model.safetensors.index.json",
+        "blobId": "0fc6be63f9c11cfca35658bb2c43bd37773c91f8",
+        "size": 61898
+      },
+      {
+        "rfilename": "modeling_d3.py",
+        "blobId": "b327030a25153668a0a34914a517c857946798f7",
+        "size": 12079
+      },
+      {
+        "rfilename": "pipeline_d3.py",
+        "blobId": "21fd672f2ef50e9db0646c7ab6a1bceb44df2974",
+        "size": 2936
+      },
+      {
+        "rfilename": "preprocessor_config.json",
+        "blobId": "2ea84a437d448ff71b08df68fdd949d5cc4ebb64",
+        "size": 390
+      },
+      {
+        "rfilename": "readout.safetensors",
+        "blobId": "69cc53b05d4a284edbd7ba1e111e38064aa9ddb5",
+        "size": 2611280,
+        "lfs": {
+          "sha256": "d570665c1da72cb9fca7ad7b23a25720eb691362694dd69d4c80c17d7656ed55",
+          "size": 2611280,
+          "pointerSize": 132
+        }
+      },
+      {
+        "rfilename": "requirements.txt",
+        "blobId": "06295a2ec746f4f9a3f8d166e36f1a7e740eb860",
+        "size": 723
+      },
+      {
+        "rfilename": "tokenizer.json",
+        "blobId": "a73a846725794819aa6e1c9e97d8dc9671c2006d",
+        "size": 12807982,
+        "lfs": {
+          "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+          "size": 12807982,
+          "pointerSize": 133
+        }
+      },
+      {
+        "rfilename": "tokenizer_config.json",
+        "blobId": "eda48d3e75a8e59a8479ee4ec8b37f76e711d9c1",
+        "size": 16710
+      },
+      {
+        "rfilename": "video_preprocessor_config.json",
+        "blobId": "3ba673a5ad7d4d13f54155ecd38b2a94a6dac8fe",
+        "size": 385
+      },
+      {
+        "rfilename": "vocab.json",
+        "blobId": "0aa0ce0658d60ac4a5d609f4eadb0e8e43514176",
+        "size": 6722759
+      }
+    ]
+  }
+]

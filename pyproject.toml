@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+[project]
+name = "amplifier-module-provider-local-decisions"
+version = "0.1.0.dev0"
+description = "Optional self-hosted Lightning and d3-mini decision capability for Amplifier"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = ["httpx>=0.27,<1", "amplifier-lib-decisions @ git+https://github.com/microsoft/amplifier-lib-decisions@main"]
+[project.entry-points."amplifier.modules"]
+provider-local-decisions = "amplifier_module_provider_local_decisions:mount"
+[project.entry-points."amplifier.decision_backends"]
+local-decisions = "amplifier_module_provider_local_decisions.catalog:catalog"
+[project.scripts]
+amplifier-local-decisions = "amplifier_module_provider_local_decisions.runtime.cli:main"
+[project.optional-dependencies]
+server = ["starlette>=0.40,<1", "uvicorn>=0.30,<1"]
+inference = ["torch==2.13.0", "torchvision==0.28.0", "transformers==5.17.0", "accelerate==1.15.0", "safetensors==0.8.0", "huggingface-hub==1.33.0", "einops", "bitsandbytes==0.50.2", "flash-linear-attention==0.5.2"]
+test = ["pytest>=8", "pytest-asyncio>=0.24", "starlette>=0.40,<1", "uvicorn>=0.30,<1"]
+[tool.hatch.build.targets.wheel]
+packages = ["amplifier_module_provider_local_decisions"]
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[project.urls]
+Repository = "https://github.com/microsoft/amplifier-module-provider-local-decisions"
