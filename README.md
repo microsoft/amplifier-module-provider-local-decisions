@@ -10,8 +10,35 @@ configured selection fallback. Installing this package changes no defaults.
 
 The default installation is a small authenticated HTTP client. PyTorch, model
 weights and an inference service are optional and independently operated. The
-same provider works in the CLI, Unified and other hosts that compose UI use;
-the controller has no dependency on this package or a specific model family.
+adapter is intended for reuse by the CLI, Unified and other UI-use hosts, subject
+to the lifecycle limitation below. The controller has no dependency on this
+package or a specific model family.
+
+## Current Core compatibility limitation
+
+Source inspection shows that this provider's capability-only mount is **not
+supported by Core 2.0.2's provider lifecycle**. Core requires a newly mounted
+chat-provider object. This module publishes `decision.backends` instead, so Core
+rejects both an enabled mount and an explicitly listed disabled row that returns
+without mounting a chat provider. For ordinary use, omit this optional provider
+row; ordinary providers and UI-use selection remain unchanged.
+
+This finding is from source inspection, not a new local-provider runtime
+reproduction. A separate Jev lifecycle probe showed an executable backend
+surviving Core's rejected mount until normal session cleanup. Do not assume
+rejection removes a backend or treat earlier inference/benchmark results as
+qualification of a supported Core mount. Consumers must not rely on rejected
+mount side effects.
+
+[Core #124](https://github.com/microsoft/amplifier-core/pull/124) proposes a
+capability-only lifecycle for modules such as this one; it is a documentation
+proposal, not implemented support. A supported lifecycle and failure cleanup
+still need agreement and qualification. No future Core version or compatibility
+floor is promised here. Installing the client or standalone inference service
+does not resolve that boundary.
+
+The following YAML illustrates the candidate configuration format; it is not a
+supported production setup on Core 2.0.2:
 
 ```yaml
 providers:
