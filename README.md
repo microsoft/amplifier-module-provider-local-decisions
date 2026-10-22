@@ -1,5 +1,7 @@
 # Optional local decision models
 
+**Status: experimental.** Interfaces may change. See [SUPPORT.md](SUPPORT.md) for the support policy.
+
 This candidate adds H2O Lightning 4B and d3-mini to Amplifier's existing optional
 decision capability. Both expose bounded predicate, choice and ordinal score
 answers. They do not enter the ordinary chat-model list or its fallback chain.
@@ -111,3 +113,25 @@ Pinned model sources:
 [H2O Lightning](https://huggingface.co/h2oai/h2o-lightning-4b/tree/d922608ae0abcd8de27948f004ecbb8f0f2334f9),
 [d3-mini](https://huggingface.co/vllm-sr/d3-mini/tree/bd0090dd758d32ba59ef5c749910a8e87fc4391f).
 Publisher weights and downloaded code retain their own licenses.
+
+## Contributing
+
+Most contributions require you to agree to a
+Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
+the rights to use your contribution. For details, visit [Contributor License Agreements](https://cla.opensource.microsoft.com).
+
+When you submit a pull request, a CLA bot will automatically determine whether you need to provide
+a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
+provided by the bot. You will only need to do this once across all repos using our CLA.
+
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
+contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+
+## Trademarks
+
+This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
+trademarks or logos is subject to and must follow
+[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
+Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
+Any use of third-party trademarks or logos are subject to those third-party's policies.
