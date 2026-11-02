@@ -46,6 +46,7 @@ def validate(config):
 
 def catalog():
     return {'schema_version': 2, 'provider_module': 'provider-local-decisions', 'validate': validate,
+        'runtime': {'kind': 'hook', 'module': 'hooks-local-decisions'},
         'backends': [{'kind': 'local-decisions', 'label': 'Local decisions',
             'decision_only': True, 'connection': {'auth': 'key', 'endpoint': True,
                 'endpoint_placeholder': 'http://127.0.0.1:18990/v1/systemone',
