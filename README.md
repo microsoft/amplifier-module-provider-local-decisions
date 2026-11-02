@@ -10,15 +10,14 @@ configured selection fallback. Installing this package changes no defaults.
 
 The default installation is a small authenticated HTTP client. PyTorch, model
 weights and an inference service are optional and independently operated. The
-same provider works in the CLI, Unified and other hosts that compose UI use;
+real hook module below can be composed by the CLI or another Amplifier host;
 the controller has no dependency on this package or a specific model family.
 
 ```yaml
-providers:
-  - module: provider-local-decisions
+hooks:
+  - module: hooks-local-decisions
     source: git+https://github.com/microsoft/amplifier-module-provider-local-decisions@main
     config:
-      chat_enabled: false
       api_key: ${LOCAL_DECISIONS_API_KEY}
       base_url: https://your-inference-host:18990/v1/systemone
       # Optional private service CA; never disable TLS verification.
@@ -40,6 +39,8 @@ tools:
           fallback: standard
 ```
 
+Use a host that expands credential references in hook configuration, or omit
+`api_key` and set `LOCAL_DECISIONS_API_KEY` in the process environment.
 Keep the UI-use behavior and browser/computer permissions configured separately.
 `allow_external_state` authorizes transfer to the configured inference process,
 including one on your own machine. It does not authorize UI actions. Explicit
@@ -113,6 +114,44 @@ Pinned model sources:
 [H2O Lightning](https://huggingface.co/h2oai/h2o-lightning-4b/tree/d922608ae0abcd8de27948f004ecbb8f0f2334f9),
 [d3-mini](https://huggingface.co/vllm-sr/d3-mini/tree/bd0090dd758d32ba59ef5c749910a8e87fc4391f).
 Publisher weights and downloaded code retain their own licenses.
+
+## Hook lifecycle and saved accounts
+
+The direct `hooks:` composition above uses Core's existing hook contract. The
+wheel contains both `provider-local-decisions` for account metadata and the separate
+`hooks-local-decisions` runtime package, declared with module type `hook`.
+It requires the shared library revision providing
+`amplifier_decisions.hooks.mount_account`; qualify these dependency revisions
+together. Installing a key or package alone never selects a decision model.
+
+| Composition on Core 2.0.2 | Result |
+| --- | --- |
+| Genuine hook, decisions enabled | Registers only named decision backends; teardown removes and closes them. |
+| Genuine hook, decisions disabled | No account transport or backend is created. |
+| Direct `provider-local-decisions` row, enabled or disabled | Unsupported: Core requires a chat provider mount. Do not depend on residual capability state after rejection. |
+| Saved logical provider account in a host with the decision-account adapter | Host resolves that account's existing auth and exact source, then projects the genuine hook for this runtime. |
+
+Unified's saved-account projection is a host integration, not a Core feature or
+an automatic behavior of every CLI/host. Other hosts can use the direct hook
+example. Ordinary chat providers remain strict, and omitting these hooks leaves
+ordinary execution unchanged. The earlier proposed capability-only Core change
+([Core #124](https://github.com/microsoft/amplifier-core/pull/124)) is not required
+by this hook implementation and is not claimed to be implemented.
+
+Account mounting unwinds every owned registration and transport on a partial
+failure. Another account's backend or replacement is preserved. A projecting
+host must verify the private lifecycle receipt before execution; only explicit
+host acceptance after complete rollback permits ordinary-model fallback.
+Cancellation and incomplete rollback abort initialization. The hook preserves
+cancellation; Core 2.0.2's Rust session boundary wraps it as an initialization
+error. No decision or UI action is replayed.
+
+Offline qualification covers built-wheel entrypoints, the real Core 2.0.2 hook
+validator/session, disabled and multiple accounts, partial failure, callback
+failure, cancellation and teardown. A separate source-selection check uses the
+real Foundation resolver and host account adapter. These checks use synthetic
+keys and no model, API inference or device calls; they do not claim new live
+inference, hardware or general website reliability results.
 
 ## Contributing
 
